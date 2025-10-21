@@ -1,1 +1,15 @@
 
+<?php
+// Step 1: Declare a JSON string
+$json_string = '{"name":"Arvin","age":29,"email":"arvin@example.com"}';
+
+// Step 2: Decode JSON into a PHP object
+$obj = json_decode($json_string);
+
+// Step 3: Decode JSON into a PHP associative array
+$arr = json_decode($json_string, true);
+
+// Step 4: Display individual values
+echo "Object: " . $obj->name . "<br>";
+echo "Array: " . $arr["email"];
+?>
