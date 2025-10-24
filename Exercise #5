@@ -1,1 +1,22 @@
 
+<?php
+// Read JSON input from the frontend
+$json = file_get_contents("php://input");
+$data = json_decode($json, true);
+
+// Extract details
+$name = $data['name'];
+$email = $data['email'];
+
+// Create JSON response
+$response = array(
+  "status" => "success",
+  "message" => "Login Successful",
+  "name" => $name,
+  "email" => $email
+);
+
+// Return response as JSON
+header("Content-Type: application/json");
+echo json_encode($response, JSON_PRETTY_PRINT);
+?>
